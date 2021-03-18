@@ -1,0 +1,19 @@
+version: '3'
+services:
+
+  broker-sse:
+    build: ./broker-sse/
+    container_name: simple_broker-sse
+    working_dir: /usr/src/app
+    volumes:
+      - ./broker-sse/:/usr/src/app/
+    environment:
+      NODE_ENV: production
+      PORT: ${PORT}
+      MONGO_DB_HOST: ${MONGO_DB_HOST}
+      MONGO_DB_PORT: ${MONGO_DB_PORT}
+      MONGO_DB_NAME: ${MONGO_DB_NAME}
+
+    ports:
+      - ${PORT_PROD}:${PORT}
+    command: npm start

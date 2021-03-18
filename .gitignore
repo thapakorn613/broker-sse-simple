@@ -1,0 +1,6 @@
+**/node_modules/
+**/.env
+**/test-functions
+**/zoom-query/storage/event_available.json
+**/receiver-mis/storage/accessToken.json
+**/accessLog

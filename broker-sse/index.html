@@ -1,0 +1,15 @@
+<html>
+
+<body>
+    <div id="messages">
+    </div>
+    <script>
+        let source = new EventSource('http://localhost:3000/dashboard/quiz/status?eventid=600f89a1cad22020c8eb9b72')
+        source.onmessage = event => {
+            data = JSON.parse(event.data)
+            document.getElementById('messages').insertAdjacentHTML('beforeend', `<p>${data.message}</p>`)
+        }
+    </script>
+</body>
+
+</html>
